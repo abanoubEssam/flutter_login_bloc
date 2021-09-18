@@ -15,7 +15,7 @@ class Bloc with Validators {
       _passwordController.stream.transform(validatePassword);
 
   Stream<bool> get submitValid =>
-      CombineLatestStream.combine2(email, password, (a, b) => false);
+      CombineLatestStream.combine2(email, password, (a, b) => true);
 
   submit() {
     final validEmail = _emailController.valueOrNull;
